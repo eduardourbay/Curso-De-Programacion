@@ -32,8 +32,10 @@ op = elegir(
     {"1": ["tomar", "1"], "2": ["ignorar", "2"]}
 )
 
-print(f"\n🚶 {nombre} avanza más profundo...\n")
-
+if op == "op1":
+    print("🔥 La antorcha ilumina débilmente tu camino...\n")
+else:
+    print("🌑 decides avanzar sin luz, avanzas con cautela...\n")
 # 🩸 HABITACIÓN 2
 print("🩸 Marcas de arrastre cubren el suelo.")
 print("👣 Alguien intentó escapar... no lo logró.")
@@ -45,7 +47,10 @@ op = elegir(
     {"1": ["seguir", "1"], "2": ["buscar", "2"]}
 )
 
-print("\n🌫️ El pasillo se vuelve más estrecho...\n")
+if op == "op1":
+    print("Llegas a un cuerpo sin vida...\n")
+else:
+    print("No encuentras otra ruta y decides seguir las marcas...\n")
 
 # 🎒 HABITACIÓN 3 (EASTER EGG INICIO)
 print("🎒 Encuentras una mochila desgarrada en el suelo...")
@@ -56,11 +61,14 @@ op = elegir(
     "1) 📦 REVISAR LA MOCHILA\n"
     "2) ❌ IGNORAR\n"
     "3) 👈 GIRAR A LA IZQUIERDA\n",
-    {"1": ["revisar", "1"], "2": ["ignorar", "2"], "3": ["izquierda", "3"]}
+    {"1": ["revisar", "1"], "2": ["ignorar", "2"], "3": ["izquierda", "girar", "girar a la izquierda", "3"]}
 )
 
 if op == "op1":
     print("📛 La placa dice: 'Zoey'... cubierta de sangre seca.\n")
+
+if op == "op2":
+    print("🚶Ignoras la mochila, sientes que pudiste haber encontrado algo importante...\n")
 
 if op == "op3":
     izquierda += 1
@@ -76,15 +84,18 @@ op = elegir(
     "1) ✋ TOMAR EL OBJETO\n"
     "2) 🚫 DEJARLO\n"
     "3) 👈 GIRAR A LA IZQUIERDA\n",
-    {"1": ["tomar", "1"], "2": ["dejar", "2"], "3": ["izquierda", "3"]}
+    {"1": ["tomar", "1"], "2": ["dejar", "2"], "3": ["izquierda", "girar", "girar a la izquierda", "3"]}
 )
 
 if op == "op1":
-    print("🔦 Es una linterna rota con el nombre 'Bill' grabado.\n")
+    print("🔦 Es una linterna rota con el nombre 'Bill' grabado, le quitas las baterías para reemplazar las de tu linterna y ahora tienes mas luz.\n")
+
+if op == "op2":
+    print("🚶 No revisas el cuerpo pero al avanzar de sala tu linterna se queda sin energía y comienzas a caminar con cautela debido a la falta de luz que te guíe...\n")
 
 if op == "op3":
     izquierda += 1
-    print("👣 Pasos inexistentes resuenan detrás de ti...\n")
+    print("👣 Pasos inexistentes resuenan detrás de ti, sientes que algo te observa y al cambiar de sala te quedas sin energía en la linterna y caminas con cautela ...\n")
 
 # 🧪 HABITACIÓN 5
 print("🧪 Restos de experimentos cubren las paredes...")
@@ -94,8 +105,14 @@ op = elegir(
     "1) 🔍 INVESTIGAR\n"
     "2) 🚪 SALIR\n"
     "3) 👈 GIRAR A LA IZQUIERDA\n",
-    {"1": ["investigar", "1"], "2": ["salir", "2"], "3": ["izquierda", "3"]}
+    {"1": ["investigar", "1"], "2": ["salir", "2"], "3": ["izquierda", "girar", "girar a la izquierda", "3"]}
 )
+if op == "op1":
+    print("🔬 Al investigar, encuentras un frasco con una etiqueta que dice 'Billis Boomer'... el líquido dentro burbujea inquietantemente.\n")
+     
+if op == "op2":
+    print("🚶 Decides salir de la habitación, pero te encuentras con una habitación sin salida y decides regresar e investigar...\n")
+    print("🔬 Al investigar, encuentras un frasco con una etiqueta que dice 'Billis de Boomer'... el líquido dentro burbujea inquietantemente.\n")
 
 if op == "op3":
     izquierda += 1
@@ -109,8 +126,13 @@ op = elegir(
     "1) 🚪 ENTRAR\n"
     "2) 🏃 ESCAPAR\n"
     "3) 👈 GIRAR A LA IZQUIERDA\n",
-    {"1": ["entrar", "1"], "2": ["escapar", "2"], "3": ["izquierda", "3"]}
+    {"1": ["entrar", "1"], "2": ["escapar", "2"], "3": ["izquierda", "girar", "girar a la izquierda", "3"]}
 )
+if op == "op1":
+    print("🚪 La puerta se abre lentamente, revelando un pasillo iluminado por la luz del sol... pero algo no se siente bien...\n")
+
+if op == "op2":
+    print("🏃 Intentas escapar por la puerta, pero te encuentras con un muro invisible que te detiene... algo te impide salir...\n")
 
 if op == "op3":
     izquierda += 1
@@ -122,6 +144,16 @@ if izquierda >= 4:
     print("🔊 Un sonido metálico se arrastra detrás de ti...")
     print("⛏️ LA PALA TE HA ALCANZADO 💀")
     print("🎮 FINAL: LEFT 4 DEAD")
+    exit()
+
+# ☠️ FINAL MALO
+if op == "op2":
+    print("\n🚶 Corres desesperadamente buscando una salida tras ignorar la puerta e intentar escapar...\n")
+    print("🧱 Pero de pronto chocas contra algo invisble que te impide avanzar")
+    print("✖️ Un muro bloquea completamente el paso y te impide continuar")
+    print("Intentas golpearlo... no tiene alguna reacción... no puedes avanzar ni retroceder...")
+    print("👁️ Sientes que algo se acerca lentamente hacía tí")
+    print("💀 FINAL MALO: QUEDAS ATRAPADO EN LA MAZMORRA Y QUEDAS SIN ESCAPATORIA")
     exit()
 
 # 🏆 FINAL NORMAL
