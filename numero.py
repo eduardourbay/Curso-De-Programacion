@@ -1,6 +1,6 @@
-numero = int(input("pon un numero"))
+n = int(input("Número: "))
 
-if numero % 5 == 0:
-    print("Es multiplo de 5 tu numero")
-else:
-    print("no es multiplo de 5 tu numero")
+while n <= 0:
+    n = int(input("Debe ser positivo: "))
+
+print("Correcto")
